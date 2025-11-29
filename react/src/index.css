@@ -1,0 +1,93 @@
+/* Download button custom styles */
+.download-btn {
+  background: transparent;
+  border: none;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  outline: none;
+  box-shadow: none;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+.download-btn:focus {
+  box-shadow: 0 0 0 2px #F8E16C;
+}
+.download-btn .download-icon {
+  transition: transform 0.15s ease, box-shadow 0.15s ease, stroke 0.15s;
+  stroke: #818cf8;
+}
+.download-btn:hover .download-icon {
+  transform: scale(1.05);
+  stroke: #a5b4fc;
+  box-shadow: 0 2px 8px #818cf833;
+}
+.download-btn:active .download-icon {
+  transform: scale(0.95);
+  stroke: #6366f1;
+}
+/* Animated border for buttons */
+.button-animated-border {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+.button-animated-border::before, .button-animated-border::after {
+  content: '';
+  position: absolute;
+  pointer-events: none;
+  border-radius: 0.5rem;
+  transition: border-color 0.2s;
+}
+.button-animated-border::before {
+  top: 0; left: 0; right: 0; bottom: 0;
+  border: 2px solid transparent;
+  z-index: 2;
+}
+/* Animated border expands on hover/focus, retracts on active */
+.button-animated-border:hover::before, .button-animated-border:focus::before {
+  border-color: #818cf8;
+  animation: border-draw 0.6s linear forwards;
+}
+.button-animated-border:active::before {
+  border-color: #818cf8;
+  animation: border-retract 0.3s linear forwards;
+}
+
+@keyframes border-retract {
+  0% { border-width: 2px; }
+  25% { border-width: 2px 2px 2px 2px; }
+  50% { border-width: 2px 2px 2px 0; }
+  75% { border-width: 2px 2px 0 0; }
+  100% { border-width: 2px 0 0 0; }
+}
+@keyframes border-draw {
+  0% { border-width: 2px 0 0 0; }
+  25% { border-width: 2px 2px 0 0; }
+  50% { border-width: 2px 2px 2px 0; }
+  75% { border-width: 2px 2px 2px 2px; }
+  100% { border-width: 2px; }
+}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background: #1a1a1a;
+  color: #e8e8e8;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+/* Custom spinner animation */
+.animate-spin-slow {
+  animation: spin 1.5s linear infinite;
+}
+
+/* Button and input focus/hover styles */
+.btn {
+  @apply rounded bg-surface border border-border px-4 py-2 text-light font-semibold transition-all duration-200 hover:scale-[1.01] hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-accent;
+}
+.btn-large {
+  @apply text-xl py-3 px-8;
+}
+.input {
+  @apply rounded bg-background border border-border px-3 py-2 text-light transition-all duration-200 focus:border-accent focus:ring-2 focus:ring-accent focus:scale-105 focus:shadow-lg;
+}
