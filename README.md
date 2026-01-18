@@ -19,7 +19,7 @@ Graveyard is a web application for music producers to easily upload, preview, co
 
 ![Completed](images/Completed.PNG)
 ![Waveform](images/Waveform.PNG)
-- The samples you selected will be combined into one .wav file with each sample spaced 4 seconds apart
+- The samples you selected will be combined into one .wav file with each sample spaced 4 seconds apart. You can then delete the individual selected samples and save storage. If you want to use one of these samples, simply cut it out of the block.
 
 ![4Seconds](images/Main2.PNG)
 - If you have a sample that is longer than 4 seconds, it will have a red dot next to it on the file explorer. These samples, if selected, will be cut off at 4 seconds for the next sample to begin
